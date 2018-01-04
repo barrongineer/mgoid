@@ -2,6 +2,10 @@
 
 A simple cli to generate and validate Mongo ObjectID's.
 
+Install/Update:
+
+`go get -u github.com/barrongineer/mgoid`
+
 Usage:
 ```
 github.com/barrongineer/mgoid                                                                                                                                                                                                                         
