@@ -5,27 +5,35 @@ import (
 
 	"github.com/spf13/cobra"
 	"gopkg.in/mgo.v2/bson"
+	"github.com/atotto/clipboard"
 )
+
+var flags = struct {
+	Copy bool
+}{}
 
 // newCmd represents the new command
 var newCmd = &cobra.Command{
 	Use:   "new",
 	Short: "Generate a new Mongo ObjectID",
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println(bson.NewObjectId().Hex())
+		hex := bson.NewObjectId().Hex()
+		fmt.Println(hex)
+
+		if flags.Copy {
+			err := clipboard.WriteAll(hex)
+			if err != nil {
+				fmt.Println("failed to copy to clipboard")
+				return
+			}
+
+			fmt.Println("copied to clipboard")
+		}
 	},
 }
 
 func init() {
 	rootCmd.AddCommand(newCmd)
 
-	// Here you will define your flags and configuration settings.
-
-	// Cobra supports Persistent Flags which will work for this command
-	// and all subcommands, e.g.:
-	// newCmd.PersistentFlags().String("foo", "", "A help for foo")
-
-	// Cobra supports local flags which will only run when this command
-	// is called directly, e.g.:
-	// newCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
+	newCmd.Flags().BoolVarP(&flags.Copy, "copy", "c", false, "Copy to clipboard")
 }

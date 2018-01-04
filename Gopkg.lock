@@ -2,6 +2,12 @@
 
 
 [[projects]]
+  branch = "master"
+  name = "github.com/atotto/clipboard"
+  packages = ["."]
+  revision = "bc5958e1c8339112fc3347a89f3c482f416a69d3"
+
+[[projects]]
   name = "github.com/fsnotify/fsnotify"
   packages = ["."]
   revision = "629574ca2a5df945712d3079857300b5e4da0236"
@@ -106,6 +112,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "1c12e0f521523d286064b4e1fe82654ae0888245ea3400170821ba08b733bc34"
+  inputs-digest = "770020fce8c6b0683e8ec5ecb428caced28ff9e354a121cc3abcfea82908e710"
   solver-name = "gps-cdcl"
   solver-version = 1

@@ -9,8 +9,9 @@ Install/Update:
 Usage:
 ```
 github.com/barrongineer/mgoid                                                                                                                                                                                                                         
-▶ mgoid new
+▶ mgoid new --copy
 5a4e5d29768a4174ea47d06f
+copied to clipboard
 
 github.com/barrongineer/mgoid                                                                                                                                                                                                                         
 ▶ mgoid validate 5a4e5d29768a4174ea47d06f
